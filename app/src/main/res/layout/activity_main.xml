@@ -80,6 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp"
             android:text="DAY 1" />
 
         <TextView
@@ -88,6 +91,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp"
             android:text="DAY 2" />
         <TextView
             android:id="@+id/text3"
@@ -95,6 +101,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp"
             android:text="DAY 3" />
         <TextView
             android:id="@+id/text4"
@@ -102,14 +111,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp"
             android:text="DAY 4" />
-        <TextView
-            android:id="@+id/text5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="DAY 5" />
+
     </LinearLayout>
 
 

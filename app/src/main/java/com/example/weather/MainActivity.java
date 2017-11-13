@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    TextView cityField, detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
+    TextView cityField, detailsField, currentTemperatureField, weatherIcon, updatedField, day1, day2, day3, day4;
 
     Typeface weatherFont;
 
@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         weatherFont = Typeface.createFromAsset(getAssets(), "fonts/weathericons-regular-webfont.ttf");
-
         cityField = (TextView)findViewById(R.id.city_field);
         updatedField = (TextView)findViewById(R.id.updated_field);
         detailsField = (TextView)findViewById(R.id.details_field);
@@ -30,9 +29,13 @@ public class MainActivity extends AppCompatActivity {
         weatherIcon = (TextView)findViewById(R.id.weather_icon);
         weatherIcon.setTypeface(weatherFont);
 
+        day1 = (TextView)findViewById(R.id.text1);
+        day2 = (TextView)findViewById(R.id.text2);
+        day3 = (TextView)findViewById(R.id.text3);
+        day4 = (TextView)findViewById(R.id.text4);
 
         Function.placeIdTask asyncTask =new Function.placeIdTask(new Function.AsyncResponse() {
-            public void processFinish(String weather_city, String weather_description, String weather_temperature, String weather_humidity, String weather_pressure, String weather_updatedOn, String weather_iconText, String sun_rise) {
+            public void processFinish(String weather_city, String weather_description, String weather_temperature, String weather_updatedOn, String weather_iconText, String sun_rise, String[]forecast) {
 
                 cityField.setText(weather_city);
                 updatedField.setText(weather_updatedOn);
@@ -40,9 +43,17 @@ public class MainActivity extends AppCompatActivity {
                 currentTemperatureField.setText(weather_temperature);
                 weatherIcon.setText(Html.fromHtml(weather_iconText));
 
+                day1.setText(forecast[0]);
+                day2.setText(forecast[1]);
+                day3.setText(forecast[2]);
+                day4.setText(forecast[3]);
             }
         });
-        asyncTask.execute("37.34", "-121.89"); //  asyncTask.execute("Latitude", "Longitude")
+
+
+
+        asyncTask.execute("37.3382", "-121.867905"); //  asyncTask.execute("Latitude", "Longitude")
+
 
 
 
